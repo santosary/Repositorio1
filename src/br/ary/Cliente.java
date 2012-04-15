@@ -1,10 +1,22 @@
-package br.edu.fasa.vendas.domainModel;
+package br.ary;
+
+import java.io.Serializable;
+import javax.persistence.*;
 
 /**
  * @author ary
+ * @version 1.0 
  */
-public class Cliente {
+@Entity
+@Table (name="Clientes")
+public class Cliente implements Serializable{
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "codigo")
     private int codigo;
+    
+    @Column (name = "nome",length = 255)
     private String nome;
 
     public int getCodigo() {

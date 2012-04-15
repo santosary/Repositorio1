@@ -1,13 +1,33 @@
-package br.edu.fasa.vendas.domainModel;
+package br.ary;
+
+import java.io.Serializable;
+import javax.persistence.*;
 
 /**
  * @author ary
+ * @version 1.0
  */
-public class ItemVenda {
+@Entity
+@Table (name="ItensVendas")
+public class ItemVenda implements Serializable {
+    
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column (name = "codigo")    
     private int codigo;
+    
+    @ManyToOne (cascade = CascadeType.ALL,targetEntity = Venda.class)
+    @JoinColumn(name = "venda")
     private Venda venda;
+    
+    @ManyToOne (cascade = CascadeType.ALL, targetEntity = Produto.class)
+    @JoinColumn (name = "produto")
     private Produto produto;
+    
+    @Column (name="quantidades")
     private int quantidade;
+    
+    @Column (name="ValoresVendas")
     private float valorVenda;
 
     public int getCodigo() {
