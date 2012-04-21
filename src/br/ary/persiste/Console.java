@@ -1,3 +1,4 @@
+
 package br.ary.persiste;
 
 import br.ary.Cliente;
@@ -14,9 +15,9 @@ public class Console {
      */
     public static void main (String [] args) {
         //instaciando objetos do tipo referencia das classes
-        EntityManagerFactory f = Persistence.createEntityManagerFactory("vandasPU");
+        EntityManagerFactory f = Persistence.createEntityManagerFactory("VendasPU");
         EntityManager manager = f.createEntityManager();
-                
+        /*       
         Cliente c = new Cliente(); //instancia objeto do tipo Cliente
         c.setNome("Ary");   //seta valor para o objeto
         
@@ -43,6 +44,6 @@ public class Console {
         for (Cliente x : rs){
             System.out.println("codigo: " + Integer.toString(x.getCodigo())
                     + "nome: " + x.getNome());
-        }
+        }*/
     }
 }
