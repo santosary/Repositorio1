@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.ary.dataAccess;
 
 import br.ary.Venda;
@@ -14,7 +10,7 @@ import javax.persistence.Query;
  * @author Ary
  */
 public class VendaDAO extends DAO<Venda> implements VendaRepository {
-    
+
     public VendaDAO(){
         super (Venda.class);
     }
@@ -24,5 +20,5 @@ public class VendaDAO extends DAO<Venda> implements VendaRepository {
         Query consulta = getEntityManager().createQuery("select nome from Venda where codigo = :p1");
         consulta.setParameter("p1", 1);
         return consulta.getResultList();
-    }    
+    }
 }
